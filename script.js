@@ -11,16 +11,14 @@ document.getElementById('rsvpForm').onsubmit = (e) => {
 };
 
 function startTimer() {
-    // Fecha de la boda
     const target = new Date("January 18, 2026 18:00:00").getTime();
     
-    const timerInterval = setInterval(() => {
+    setInterval(() => {
         const now = new Date().getTime();
         const diff = target - now;
 
         if (diff < 0) {
-            document.getElementById("timer").innerHTML = "¡HOY ES EL DÍA!";
-            clearInterval(timerInterval);
+            document.getElementById("timer").innerHTML = "<div>¡LLEGÓ EL DÍA!</div>";
             return;
         }
 
@@ -37,5 +35,4 @@ function startTimer() {
         `;
     }, 1000);
 }
-
 startTimer();
