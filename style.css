@@ -15,10 +15,8 @@ img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) cont
 .vertical-title { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; letter-spacing: 15px; }
 .vertical-title h1 { font-family: 'Bodoni Moda', serif; font-size: 4rem; margin: 20px 0; writing-mode: vertical-rl; transform: rotate(180deg); }
 
-/* Mural de Eventos */.event-mural .mural-row:last-child {
-    margin-bottom: 20px !important;
-    padding-bottom: 0 !important;
-}
+/* Mural de Eventos */
+.event-mural { padding: 100px 0;}
 .mural-row { display: grid; grid-template-columns: 1fr 1fr; align-items: center; margin-bottom: 80px; }
 .mural-row.reverse { direction: rtl; }
 .mural-row.reverse .mural-text-box { direction: ltr; }
