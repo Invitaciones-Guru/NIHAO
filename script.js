@@ -18,7 +18,7 @@ function startTimer() {
         const diff = target - now;
 
         if (diff < 0) {
-            document.getElementById("timer").innerHTML = "<div>¡LLEGÓ EL DÍA!</div>";
+            document.getElementById("timer").innerHTML = "<div>¡HOY!</div>";
             return;
         }
 
