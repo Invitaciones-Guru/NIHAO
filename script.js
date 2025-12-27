@@ -10,17 +10,20 @@ document.getElementById('rsvpForm').onsubmit = (e) => {
     window.open(`https://wa.me/528186694938?text=${text}`, '_blank');
 };
 
-// Intento de Autoplay al primer toque (si tienes audio)
-window.addEventListener('click', function() {
-    const audio = document.getElementById('weddingMusic');
-    if (audio && audio.paused) {
-        audio.play();
-    }
-}, { once: true });
+<section class="section reverse">
+    <div class="section-text">
+        <h2>Cuenta regresiva</h2>
+        <p>Faltan...</p>
 
-window.addEventListener('scroll', function() {
-    const audio = document.getElementById('weddingMusic');
-    if (audio && audio.paused) {
-        audio.play();
-    }
-}, { once: true });
+        <div id="countdown" class="countdown">
+            <div><span id="days">0</span><small>Días</small></div>
+            <div><span id="hours">0</span><small>Horas</small></div>
+            <div><span id="minutes">0</span><small>Minutos</small></div>
+            <div><span id="seconds">0</span><small>Segundos</small></div>
+        </div>
+    </div>
+
+    <div class="section-img">
+        <img src="foto4.jpeg" alt="Cuenta regresiva">
+    </div>
+</section>
