@@ -10,7 +10,7 @@ document.getElementById('rsvpForm').onsubmit = (e) => {
     window.open(`https://wa.me/528186694938?text=${text}`, '_blank');
 };
 
-const eventDate = new Date("2026-18-15T18:00:00");
+const eventDate = new Date("2026-01-18T18:00:00");
 
 function updateCountdown() {
     const now = new Date();
