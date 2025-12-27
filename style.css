@@ -392,19 +392,18 @@ img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) cont
 
 
 /* FRANJA COMPLETA DEL CONTADOR */
+/* Forzar márgenes correctos del contador */
 .countdown-full {
     padding: 60px 0;
-    margin-top: 0;        /* se pega arriba */
-    margin-bottom: 120px; /* se separa del álbum */
+    margin-top: 0 !important;         /* pegado a la foto */
+    margin-bottom: 120px !important;  /* separado del álbum */
 }
 
 /* GRID DEL CONTADOR */
 .countdown-grid {
-    width: 90%;
-    max-width: 900px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .count-box {
@@ -430,16 +429,15 @@ img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) cont
 
 
 /* -------- RESPONSIVE CELULAR -------- */
+/* Mantener los 4 cuadros en UNA SOLA FILA en celular */
 @media (max-width: 768px) {
-
     .countdown-grid {
-        display: flex !important;
-        flex-wrap: nowrap;         /* evita dividirse */
-        overflow-x: auto;          /* agrega scroll suave si no cabe */
-        gap: 15px;
+        overflow-x: auto;      /* scroll invisible si no cabe */
+        padding-bottom: 10px;  /* evita que corte sombra */
     }
 
     .count-box {
-        min-width: 90px;           /* cada cuadro sigue siendo visible */
+        min-width: 95px;       /* tamaño estable */
+        flex: 0 0 auto;        /* evita que se encoja */
     }
 }
