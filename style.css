@@ -335,83 +335,77 @@ img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) cont
 
 
 
-/* COUNTDOWN VOGUE - ESTILO EDITORIAL *//* COUNTDOWN EDITORIAL VOGUE */
-.countdown-editorial {
-    padding: 40px 0; /* Menos espacio para mantener la fluidez */
-    background: var(--white);
-}
-
-.countdown-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.countdown-image {
-    position: relative;
-    height: 450px;
+/* COUNTDOWN DENTRO DE FOTO */
+.countdown-editorial-vogue {
     width: 100%;
+    background: #fff;
+    padding: 0; /* Sin separación */
+    line-height: 0;
+}
+
+.countdown-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Altura ideal para móvil y desktop */
     overflow: hidden;
 }
 
-.countdown-image img {
+.countdown-image-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%) brightness(0.6); /* Oscurece para que los números resalten */
+    filter: grayscale(100%) contrast(1.2) brightness(0.7); /* Grayscale y oscurecido para legibilidad */
 }
 
-.countdown-overlay {
+.countdown-inner-content {
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 40px; /* Lo pega a la parte de abajo */
+    left: 50%;
+    transform: translateX(-50%); /* Centrado perfecto */
+    text-align: center;
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: var(--white);
-    border: 1px solid rgba(255,255,255,0.2); /* Marco sutil interior */
-    margin: 10px;
-    width: calc(100% - 20px);
-    height: calc(100% - 20px);
+    color: #fff;
+    line-height: normal; /* Resetea el line-height de la imagen */
 }
 
-.countdown-label {
+.faltan-text {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: 1.8rem;
-    letter-spacing: 5px;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    letter-spacing: 8px;
+    margin-bottom: 15px;
+    text-transform: lowercase;
+    font-weight: 400;
 }
 
-.clock-display {
+.clock-display-vogue {
     display: flex;
+    justify-content: center;
     gap: 25px;
     font-family: 'Bodoni Moda', serif;
 }
 
-.clock-display div {
+.clock-display-vogue div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     line-height: 1;
 }
 
-.clock-display span {
+.clock-display-vogue span {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.6rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    opacity: 0.8;
-    margin-top: 10px;
+    opacity: 0.7;
+    margin-top: 8px;
 }
 
-/* RESPONSIVO CELULAR */
+/* Ajuste móvil */
 @media (max-width: 768px) {
-    .countdown-image { height: 350px; }
-    .clock-display { gap: 15px; }
-    .clock-display div { font-size: 2rem; }
+    .countdown-image-wrap { height: 50vh; }
+    .clock-display-vogue div { font-size: 1.8rem; }
+    .clock-display-vogue { gap: 15px; }
+    .faltan-text { font-size: 1.5rem; }
 }
