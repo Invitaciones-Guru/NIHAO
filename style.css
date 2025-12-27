@@ -3,68 +3,68 @@
 body { margin: 0; font-family: 'Montserrat', sans-serif; background: var(--white); overflow-x: hidden; }
 img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.1); }
 
-/* HERO SPLIT */
+/* HERO VOGUE */
 .hero-split { display: grid; grid-template-columns: 1.2fr 0.8fr; height: 100vh; }
 .hero-text-side { display: flex; align-items: center; justify-content: center; background: #fff; }
 .vertical-title h1 { 
     font-family: 'Bodoni Moda', serif; font-size: 3.5rem; writing-mode: vertical-rl; 
-    transform: rotate(180deg); letter-spacing: 12px; margin: 0; 
+    transform: rotate(180deg); letter-spacing: 12px; margin: 0; line-height: 1;
 }
-.hero-date { font-size: 0.8rem; letter-spacing: 5px; display: block; margin-top: 20px; }
+.hero-date { font-size: 0.8rem; letter-spacing: 5px; display: block; margin-top: 20px; text-align: center; }
 
 /* MENSAJE & PADRES */
 .wedding-message-vogue { padding: 80px 20px; text-align: center; }
 .message-wrapper { position: relative; margin-bottom: 50px; }
 .ampersand-bg { font-family: 'Bodoni Moda', serif; font-size: 7rem; color: #f9f9f9; position: absolute; left: 50%; top: -30px; transform: translateX(-50%); z-index: -1; }
-.main-wedding-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; line-height: 1.6; max-width: 400px; margin: 0 auto; }
+.main-wedding-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.1rem; line-height: 1.6; }
 .parents-editorial-grid { display: flex; justify-content: center; align-items: center; gap: 30px; }
 .parent-name { font-weight: 300; font-size: 1rem; margin: 5px 0; }
 .vertical-divider { width: 1px; height: 50px; background: #eee; }
 
-/* MURAL */
-.mural-row { display: grid; grid-template-columns: 1fr 1fr; min-height: 400px; }
-.mural-row.reverse { direction: rtl; }
-.mural-row.reverse .mural-text-box { direction: ltr; }
-.mural-text-box { padding: 40px; display: flex; flex-direction: column; justify-content: center; position: relative; }
+/* MURAL INTERCALADO */
+.mural-row { display: grid; grid-template-columns: 1fr 1fr; }
+.mural-text-box { padding: 60px; display: flex; flex-direction: column; justify-content: center; position: relative; }
 .event-num { font-size: 4rem; font-family: 'Bodoni Moda', serif; opacity: 0.05; position: absolute; top: 10px; left: 20px; }
 .mural-text-box h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin: 0; }
-.btn-underline { margin-top: 15px; text-decoration: none; color: #000; border-bottom: 1px solid #000; font-size: 0.7rem; letter-spacing: 2px; font-weight: 600; width: fit-content; }
+.btn-underline { margin-top: 15px; text-decoration: none; color: #000; border-bottom: 1px solid #000; font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; width: fit-content; }
 
 /* ÁLBUM */
-.album-editorial-section { padding: 40px 20px; background: #f9f9f9; }
 .album-layout { display: grid; grid-template-columns: 1fr 1fr; background: #fff; border: 1px solid #eee; }
-.album-text { padding: 40px; }
-.album-title { font-family: 'Bodoni Moda', serif; font-size: 2rem; margin: 0 0 15px; }
-.btn-noir-minimal { padding: 12px 20px; border: 1px solid #000; color: #000; text-decoration: none; font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; display: inline-block; }
-.album-visual { background: #000; padding: 40px; display: flex; justify-content: center; }
-.qr-img { width: 120px; height: 120px; filter: invert(1); }
+.album-text { padding: 60px; }
+.album-title { font-family: 'Bodoni Moda', serif; font-size: 2.5rem; }
+.album-visual { background: #000; padding: 60px; display: flex; justify-content: center; }
+.qr-img { width: 150px; height: 150px; filter: invert(1); }
 
 /* RSVP */
 .rsvp-noir { background: #000; color: #fff; padding: 80px 20px; text-align: center; }
-.rsvp-title { font-family: 'Bodoni Moda', serif; font-size: 3rem; letter-spacing: 10px; margin-bottom: 40px; }
-.noir-form { display: flex; flex-direction: column; gap: 30px; max-width: 350px; margin: 0 auto; }
-.noir-form input, .noir-form select { background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; padding: 10px; font-size: 1rem; text-align: center; border-radius: 0; outline: none; }
-.btn-gold { background: #fff; color: #000; border: none; padding: 15px; font-weight: 600; letter-spacing: 3px; cursor: pointer; }
+.rsvp-title { font-family: 'Bodoni Moda', serif; font-size: 4rem; letter-spacing: 15px; }
+.noir-form { display: flex; flex-direction: column; gap: 30px; max-width: 350px; margin: 40px auto; }
+.noir-form input, .noir-form select { background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; padding: 10px; font-size: 1rem; text-align: center; border-radius: 0; }
+.btn-gold { background: #fff; color: #000; border: none; padding: 15px; font-weight: 600; letter-spacing: 3px; }
 
-/* --- AJUSTES CRÍTICOS PARA CELULAR --- */
+/* AJUSTES CELULAR (AQUÍ ESTÁ LA MAGIA) */
 @media (max-width: 768px) {
-    .hero-split { grid-template-columns: 1fr; height: 100vh; position: relative; }
-    .hero-image-side { height: 100vh; width: 100%; }
+    /* Portada asimétrica en móvil */
+    .hero-split { grid-template-columns: 1fr; position: relative; }
+    .hero-image-side { height: 100vh; }
     .hero-text-side { 
-        position: absolute; bottom: 0; right: 0; width: 50%; height: 40%; 
-        background: rgba(255,255,255,0.9); border-left: 1px solid #eee;
+        position: absolute; bottom: 0; right: 0; width: 45%; height: 45%; 
+        background: rgba(255,255,255,0.95); border-left: 1px solid #eee;
     }
-    .vertical-title h1 { font-size: 2rem; letter-spacing: 8px; }
-    
-    .parents-editorial-grid { flex-direction: column; gap: 15px; }
-    .vertical-divider { width: 40px; height: 1px; }
+    .vertical-title h1 { font-size: 2.2rem; letter-spacing: 8px; }
 
-    .mural-row, .mural-row.reverse { grid-template-columns: 1fr; }
-    .mural-img-box { height: 300px; }
-    .mural-text-box { padding: 40px 20px; text-align: center; align-items: center; }
+    /* Intercalado de Ceremonia/Recepción */
+    .mural-row { grid-template-columns: 1fr; }
     
+    /* Esta regla hace que en la fila "reverse", la imagen pase abajo y el texto arriba */
+    .mural-row.reverse { display: flex; flex-direction: column-reverse; }
+    
+    .mural-img-box { height: 350px; }
+    .mural-text-box { padding: 50px 20px; text-align: center; align-items: center; }
+    
+    .parents-editorial-grid { flex-direction: column; gap: 10px; }
+    .vertical-divider { width: 40px; height: 1px; }
     .album-layout { grid-template-columns: 1fr; }
-    .album-text { text-align: center; }
 }
 
-.footer-signature { padding: 30px; text-align: center; opacity: 0.4; font-size: 0.6rem; letter-spacing: 2px; }
+.footer-signature { padding: 40px; text-align: center; opacity: 0.4; font-size: 0.6rem; letter-spacing: 2px; }
