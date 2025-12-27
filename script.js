@@ -10,20 +10,27 @@ document.getElementById('rsvpForm').onsubmit = (e) => {
     window.open(`https://wa.me/528186694938?text=${text}`, '_blank');
 };
 
-<section class="section reverse">
-    <div class="section-text">
-        <h2>Cuenta regresiva</h2>
-        <p>Faltan...</p>
+const eventDate = new Date("2026-18-15T18:00:00");
 
-        <div id="countdown" class="countdown">
-            <div><span id="days">0</span><small>Días</small></div>
-            <div><span id="hours">0</span><small>Horas</small></div>
-            <div><span id="minutes">0</span><small>Minutos</small></div>
-            <div><span id="seconds">0</span><small>Segundos</small></div>
-        </div>
-    </div>
+function updateCountdown() {
+    const now = new Date();
+    const diff = eventDate - now;
 
-    <div class="section-img">
-        <img src="foto4.jpeg" alt="Cuenta regresiva">
-    </div>
-</section>
+    if (diff <= 0) {
+        document.getElementById("countdown").innerHTML = "<h3>¡Hoy es el gran día!</h3>";
+        return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
