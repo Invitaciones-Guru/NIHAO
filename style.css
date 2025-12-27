@@ -1,84 +1,80 @@
-:root { --black: #000; --white: #fff; --gray: #f5f5f5; }
+:root { --black: #000; --white: #fff; --grey: #f4f4f4; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+body { font-family: 'Montserrat', sans-serif; background: var(--white); overflow-x: hidden; }
 img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); }
 
-/* HERO VOGUE */
-.vogue-hero { height: 100vh; position: relative; padding: 15px; background: #fff; }
-.hero-container { position: relative; width: 100%; height: 100%; }
-.hero-img { width: 75%; height: 85%; }
-.hero-white-card { 
-    position: absolute; right: 0; bottom: 5%; width: 55%; 
-    background: #fff; padding: 40px 20px; z-index: 2;
-    box-shadow: -10px 10px 30px rgba(0,0,0,0.03);
+/* PORTADA VOGUE CELULAR */
+.vogue-hero { height: 100vh; padding: 15px; background: #fff; }
+.hero-wrapper { position: relative; height: 100%; width: 100%; }
+.hero-img-container { width: 80%; height: 80%; }
+.hero-card-white { 
+    position: absolute; right: 0; bottom: 5%; width: 60%; 
+    background: #fff; padding: 40px 10px; z-index: 10;
+    box-shadow: -15px 15px 40px rgba(0,0,0,0.05);
 }
-.hero-text-content h1 { 
-    font-family: 'Bodoni Moda', serif; font-size: 3rem; writing-mode: vertical-rl; 
-    transform: rotate(180deg); letter-spacing: 12px; margin: 0; line-height: 1;
+.hero-content h1 { 
+    font-family: 'Bodoni Moda', serif; font-size: 2.2rem; writing-mode: vertical-rl; 
+    transform: rotate(180deg); letter-spacing: 10px; line-height: 1;
 }
-.vogue-date { display: block; margin-top: 30px; font-size: 0.7rem; letter-spacing: 5px; text-align: center; }
+.vogue-date { display: block; margin-top: 30px; font-size: 0.7rem; letter-spacing: 4px; text-align: center; }
 
 /* PADRES */
-.editorial-intro { padding: 80px 20px; text-align: center; }
-.quote-wrapper { position: relative; margin-bottom: 60px; }
-.amp-bg { font-family: 'Bodoni Moda', serif; font-size: 8rem; color: #f9f9f9; position: absolute; top: -50px; left: 50%; transform: translateX(-50%); z-index: -1; }
-.vogue-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; line-height: 1.8; max-width: 500px; margin: 0 auto; }
-.parents-grid { display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 50px; }
-.editorial-v-line { width: 1px; height: 60px; background: #eee; }
-.parent-unit small { font-size: 0.6rem; letter-spacing: 3px; color: #aaa; display: block; margin-bottom: 10px; }
-.parent-unit h3 { font-weight: 300; font-size: 1rem; }
+.editorial-parents { padding: 80px 20px; text-align: center; }
+.bg-ampersand { font-family: 'Bodoni Moda', serif; font-size: 8rem; color: #f9f9f9; position: absolute; left: 50%; transform: translateX(-50%); top: -50px; z-index: -1; }
+.quote-editorial { position: relative; margin-bottom: 60px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; line-height: 1.8; }
+.parents-vogue-grid { display: flex; justify-content: center; align-items: center; gap: 30px; }
+.divider-line { width: 1px; height: 50px; background: #eee; }
+.parent-box small { font-size: 0.6rem; letter-spacing: 3px; color: #aaa; margin-bottom: 8px; display: block; }
+.parent-box h3 { font-weight: 300; font-size: 1rem; }
 
 /* ITINERARIO */
-.itinerary-section { padding: 60px 20px; text-align: center; background: #fafafa; }
-.script-title { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.5rem; margin-bottom: 40px; }
-.itinerary-list { display: flex; flex-direction: column; gap: 25px; }
-.iti-item span { font-size: 0.7rem; color: #888; letter-spacing: 2px; }
-.iti-item strong { display: block; letter-spacing: 4px; font-size: 0.8rem; margin-top: 5px; }
+.itinerary-vogue { padding: 60px 20px; text-align: center; background: #fafafa; }
+.script-font { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.5rem; margin-bottom: 40px; }
+.iti-row { margin-bottom: 25px; }
+.iti-row span { font-size: 0.7rem; color: #888; letter-spacing: 2px; display: block; }
+.iti-row strong { font-size: 0.85rem; letter-spacing: 3px; display: block; margin-top: 5px; }
 
-/* MURAL (INTERCALADO) */
-.mural-row { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #eee; }
-.mural-text { padding: 60px; display: flex; flex-direction: column; justify-content: center; position: relative; }
-.num { font-family: 'Bodoni Moda', serif; font-size: 4rem; opacity: 0.05; position: absolute; top: 20px; left: 20px; }
-.mural-text h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
-.vogue-btn { text-decoration: none; color: #000; border-bottom: 1px solid #000; font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; width: fit-content; margin-top: 15px; }
-.mural-photo { height: 500px; }
-.mural-row.reverse { direction: rtl; }
-.mural-row.reverse .mural-text { direction: ltr; }
+/* MURAL INTERCALADO REAL */
+.mural-item { display: flex; flex-direction: column; border-top: 1px solid #eee; }
+.mural-text { padding: 60px 20px; text-align: center; position: relative; }
+.mural-n { font-family: 'Bodoni Moda', serif; font-size: 4rem; opacity: 0.05; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); }
+.mural-text h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 10px; }
+.vogue-link { display: inline-block; margin-top: 15px; border-bottom: 1px solid #000; text-decoration: none; color: #000; font-size: 0.7rem; letter-spacing: 2px; font-weight: 600; }
+.mural-img { height: 400px; width: 100%; }
+
+/* ESTO HACE EL INTERCALADO EN CELULAR */
+.reverse-logic { flex-direction: column-reverse; }
 
 /* ÁLBUM */
-.album-section { padding: 80px 20px; }
-.album-card { display: grid; grid-template-columns: 1.2fr 0.8fr; border: 1px solid #eee; max-width: 1000px; margin: 0 auto; }
-.album-info { padding: 60px; }
-.album-info h2 { font-family: 'Bodoni Moda', serif; font-size: 2.5rem; margin-bottom: 20px; }
-.btn-noir { display: inline-block; padding: 15px 30px; border: 1px solid #000; text-decoration: none; color: #000; font-weight: 600; font-size: 0.7rem; letter-spacing: 2px; }
+.album-vogue { padding: 60px 20px; }
+.album-wrap { border: 1px solid #eee; display: flex; flex-direction: column; }
+.album-desc-side { padding: 50px 20px; text-align: center; }
+.album-desc-side h2 { font-family: 'Bodoni Moda', serif; font-size: 2rem; margin-bottom: 15px; }
+.btn-vogue-black { display: inline-block; padding: 15px 30px; border: 1px solid #000; color: #000; text-decoration: none; font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; }
 .album-qr-side { background: #000; padding: 60px; display: flex; justify-content: center; }
-.qr-container { border: 1px solid rgba(255,255,255,0.2); padding: 20px; text-align: center; color: #fff; }
-.qr-container img { width: 140px; height: 140px; filter: invert(1); margin-bottom: 15px; }
-.qr-container span { font-size: 0.6rem; letter-spacing: 2px; opacity: 0.6; }
+.qr-editorial-box { border: 1px solid rgba(255,255,255,0.1); padding: 20px; text-align: center; color: #fff; }
+.qr-editorial-box img { width: 130px; height: 130px; filter: invert(1); margin-bottom: 10px; }
+.qr-editorial-box span { font-size: 0.5rem; letter-spacing: 2px; opacity: 0.5; }
 
 /* RSVP */
-.rsvp-noir { background: #000; color: #fff; padding: 100px 20px; text-align: center; }
-.bg-logo { font-family: 'Bodoni Moda', serif; font-size: 4rem; letter-spacing: 15px; margin-bottom: 10px; }
-.rsvp-limit { font-size: 0.7rem; letter-spacing: 4px; color: #444; margin-bottom: 60px; }
-.rsvp-form { display: flex; flex-direction: column; gap: 40px; max-width: 400px; margin: 0 auto; }
-.rsvp-form input, .rsvp-form select { background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; padding: 10px; font-size: 1rem; text-align: center; outline: none; border-radius: 0; }
-.rsvp-form button { background: #fff; color: #000; border: none; padding: 20px; font-weight: 600; letter-spacing: 3px; cursor: pointer; }
-.adults-note { font-size: 0.6rem; letter-spacing: 2px; opacity: 0.4; margin-top: 40px; }
+.rsvp-vogue { background: #000; color: #fff; padding: 80px 20px; text-align: center; }
+.vogue-logo { font-family: 'Bodoni Moda', serif; font-size: 3.5rem; letter-spacing: 12px; margin-bottom: 5px; }
+.rsvp-deadline { font-size: 0.6rem; letter-spacing: 3px; color: #444; margin-bottom: 50px; }
+.vogue-form { display: flex; flex-direction: column; gap: 35px; max-width: 320px; margin: 0 auto; }
+.vogue-form input, .vogue-form select { background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; padding: 10px; text-align: center; font-size: 0.9rem; outline: none; border-radius: 0; }
+.vogue-form button { background: #fff; color: #000; padding: 18px; border: none; font-weight: 600; letter-spacing: 3px; cursor: pointer; }
 
-/* RESPONSIVO CELULAR PROFESIONAL */
-@media (max-width: 768px) {
-    .hero-img { width: 85%; height: 75%; }
-    .hero-white-card { width: 65%; bottom: 10%; padding: 30px 15px; }
-    .hero-text-content h1 { font-size: 2rem; }
-
-    /* Forzado de intercalado en móvil */
-    .mural-row { display: flex; flex-direction: column; }
-    .mural-row.reverse { flex-direction: column-reverse; } /* Imagen arriba, texto abajo */
-    .mural-photo { height: 350px; }
-    .mural-text { text-align: center; align-items: center; padding: 50px 20px; }
-
-    .parents-grid { flex-direction: column; gap: 20px; }
-    .editorial-v-line { width: 40px; height: 1px; }
-    .album-card { grid-template-columns: 1fr; }
+/* ESCRITORIO (PARA QUE NO SE ROMPA EN PC) */
+@media (min-width: 769px) {
+    .vogue-hero { padding: 40px; }
+    .hero-img-container { width: 70%; height: 90%; }
+    .hero-card-white { width: 45%; bottom: 10%; }
+    .hero-content h1 { font-size: 3.5rem; }
+    .mural-item { flex-direction: row; }
+    .reverse-logic { flex-direction: row-reverse; }
+    .mural-text, .mural-img { width: 50%; height: 600px; }
+    .album-wrap { flex-direction: row; }
+    .album-desc-side, .album-qr-side { width: 50%; }
 }
-.footer-sig { padding: 40px; text-align: center; opacity: 0.3; font-size: 0.6rem; letter-spacing: 2px; }
+
+.guru-footer { padding: 30px; text-align: center; font-size: 0.6rem; letter-spacing: 2px; opacity: 0.3; }
