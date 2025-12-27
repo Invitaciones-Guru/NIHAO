@@ -10,27 +10,32 @@ document.getElementById('rsvpForm').onsubmit = (e) => {
     window.open(`https://wa.me/528186694938?text=${text}`, '_blank');
 };
 
-const eventDate = new Date("2026-01-18T18:00:00");
+function startTimer() {
+    // Fecha de la boda
+    const target = new Date("January 18, 2026 18:00:00").getTime();
+    
+    const timerInterval = setInterval(() => {
+        const now = new Date().getTime();
+        const diff = target - now;
 
-function updateCountdown() {
-    const now = new Date();
-    const diff = eventDate - now;
+        if (diff < 0) {
+            document.getElementById("timer").innerHTML = "¡HOY ES EL DÍA!";
+            clearInterval(timerInterval);
+            return;
+        }
 
-    if (diff <= 0) {
-        document.getElementById("countdown").innerHTML = "<h3>¡Hoy es el gran día!</h3>";
-        return;
-    }
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((diff % (1000 * 60)) / 1000);
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((diff / (1000 * 60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    document.getElementById("days").textContent = days;
-    document.getElementById("hours").textContent = hours;
-    document.getElementById("minutes").textContent = minutes;
-    document.getElementById("seconds").textContent = seconds;
+        document.getElementById("timer").innerHTML = `
+            <div>${d}<span>días</span></div>
+            <div>${h}<span>hs</span></div>
+            <div>${m}<span>min</span></div>
+            <div>${s}<span>seg</span></div>
+        `;
+    }, 1000);
 }
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
+startTimer();
