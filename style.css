@@ -391,57 +391,60 @@ img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) cont
 
 
 
-/* --- COUNTDOWN ESTILO MURAL (FORZADO) --- */
+/* FRANJA COMPLETA DEL CONTADOR */
+.countdown-full {
+    width: 100%;
+    padding: 50px 0;
+    background: #fafafa;
+    display: flex;
+    justify-content: center;
+}
 
+/* GRID DEL CONTADOR */
 .countdown-grid {
+    width: 90%;
+    max-width: 900px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
-    margin-top: 40px;
 }
 
 .count-box {
     text-align: center;
-
-    /* fuerza recuadro */
-    border: 1px solid #d1d1d1 !important;
+    border: 1px solid #d1d1d1;
     padding: 25px 10px;
-
-    /* evita que algo lo aplaste */
     background: #fff;
-    box-sizing: border-box;
-
-    /* estética */
     letter-spacing: 3px;
 }
 
 .count-box span {
     font-family: 'Bodoni Moda', serif;
-    font-size: 2.5rem;
-    display: block;
+    font-size: 2.7rem;
     margin-bottom: 5px;
-    color: #000;
+    display: block;
 }
 
 .count-box small {
     font-size: 0.65rem;
-    color: #555;
     letter-spacing: 4px;
+    color: #555;
 }
 
-/* --- RESPONSIVE --- */
+
+/* -------- RESPONSIVE CELULAR -------- */
 @media (max-width: 768px) {
     .countdown-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        width: 85%;
     }
 
     .count-box {
-        padding: 15px 5px;
+        padding: 18px 8px;
     }
 
     .count-box span {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .count-box small {
