@@ -1,96 +1,84 @@
-:root {
-    --black: #0a0a0a;
-    --white: #ffffff;
-    --gray: #f4f4f4;
-}
-
+:root { --black: #000; --white: #fff; --gray: #f5f5f5; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); }
 
-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.1); }
-
-/* HERO SPLIT VOGUE */
-.hero-split { display: grid; grid-template-columns: 1.2fr 0.8fr; height: 100vh; background: var(--gray); }
-.hero-text-side { display: flex; align-items: center; justify-content: center; background: #fff; z-index: 2; }
-.vertical-title h1 { 
-    font-family: 'Bodoni Moda', serif; font-size: 3.5rem; writing-mode: vertical-rl; 
-    transform: rotate(180deg); margin: 0; letter-spacing: 12px; line-height: 1;
+/* HERO VOGUE */
+.vogue-hero { height: 100vh; position: relative; padding: 15px; background: #fff; }
+.hero-container { position: relative; width: 100%; height: 100%; }
+.hero-img { width: 75%; height: 85%; }
+.hero-white-card { 
+    position: absolute; right: 0; bottom: 5%; width: 55%; 
+    background: #fff; padding: 40px 20px; z-index: 2;
+    box-shadow: -10px 10px 30px rgba(0,0,0,0.03);
 }
-.hero-date { margin-top: 20px; font-size: 0.8rem; letter-spacing: 5px; font-weight: 300; display: block; text-align: center; }
-
-/* MENSAJE & PADRES */
-.wedding-message-vogue { padding: 100px 20px; text-align: center; }
-.message-wrapper { position: relative; margin-bottom: 60px; }
-.ampersand-bg { 
-    font-family: 'Bodoni Moda', serif; font-size: 8rem; color: #f9f9f9; 
-    position: absolute; left: 50%; top: -40px; transform: translateX(-50%); z-index: -1; 
+.hero-text-content h1 { 
+    font-family: 'Bodoni Moda', serif; font-size: 3rem; writing-mode: vertical-rl; 
+    transform: rotate(180deg); letter-spacing: 12px; margin: 0; line-height: 1;
 }
-.main-wedding-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; line-height: 1.8; max-width: 600px; margin: 0 auto; }
-.parents-editorial-grid { display: flex; justify-content: center; align-items: center; gap: 40px; }
-.family-label { font-size: 0.6rem; letter-spacing: 4px; color: #aaa; margin-bottom: 10px; display: block; }
-.parent-name { font-weight: 300; font-size: 1.1rem; margin: 5px 0; }
-.vertical-divider { width: 1px; height: 60px; background: #eee; }
+.vogue-date { display: block; margin-top: 30px; font-size: 0.7rem; letter-spacing: 5px; text-align: center; }
 
-/* MURAL (EVENTOS + DRESS CODE) */
-.mural-row { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+/* PADRES */
+.editorial-intro { padding: 80px 20px; text-align: center; }
+.quote-wrapper { position: relative; margin-bottom: 60px; }
+.amp-bg { font-family: 'Bodoni Moda', serif; font-size: 8rem; color: #f9f9f9; position: absolute; top: -50px; left: 50%; transform: translateX(-50%); z-index: -1; }
+.vogue-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; line-height: 1.8; max-width: 500px; margin: 0 auto; }
+.parents-grid { display: flex; justify-content: center; align-items: center; gap: 40px; margin-top: 50px; }
+.editorial-v-line { width: 1px; height: 60px; background: #eee; }
+.parent-unit small { font-size: 0.6rem; letter-spacing: 3px; color: #aaa; display: block; margin-bottom: 10px; }
+.parent-unit h3 { font-weight: 300; font-size: 1rem; }
+
+/* ITINERARIO */
+.itinerary-section { padding: 60px 20px; text-align: center; background: #fafafa; }
+.script-title { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.5rem; margin-bottom: 40px; }
+.itinerary-list { display: flex; flex-direction: column; gap: 25px; }
+.iti-item span { font-size: 0.7rem; color: #888; letter-spacing: 2px; }
+.iti-item strong { display: block; letter-spacing: 4px; font-size: 0.8rem; margin-top: 5px; }
+
+/* MURAL (INTERCALADO) */
+.mural-row { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #eee; }
+.mural-text { padding: 60px; display: flex; flex-direction: column; justify-content: center; position: relative; }
+.num { font-family: 'Bodoni Moda', serif; font-size: 4rem; opacity: 0.05; position: absolute; top: 20px; left: 20px; }
+.mural-text h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+.vogue-btn { text-decoration: none; color: #000; border-bottom: 1px solid #000; font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; width: fit-content; margin-top: 15px; }
+.mural-photo { height: 500px; }
 .mural-row.reverse { direction: rtl; }
-.mural-row.reverse .mural-text-box { direction: ltr; }
-.mural-img-box { height: 600px; }
-.mural-text-box { padding: 80px; text-align: left; position: relative; }
-.event-num { font-size: 5rem; font-family: 'Bodoni Moda', serif; opacity: 0.05; position: absolute; top: 20px; left: 40px; }
-.mural-text-box h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
-.btn-underline { display: inline-block; margin-top: 20px; text-decoration: none; color: #000; border-bottom: 2px solid #000; font-size: 0.7rem; font-weight: 600; letter-spacing: 3px; }
+.mural-row.reverse .mural-text { direction: ltr; }
 
-/* ÁLBUM EDITORIAL */
-.album-editorial-section { padding: 80px 5%; background: #f9f9f9; }
-.album-layout { display: grid; grid-template-columns: 1fr 1fr; max-width: 1000px; margin: 0 auto; background: #fff; border: 1px solid #eee; }
-.album-text { padding: 60px; text-align: left; display: flex; flex-direction: column; justify-content: center; }
-.album-title { font-family: 'Bodoni Moda', serif; font-size: 2.5rem; margin-bottom: 20px; }
-.album-desc { font-size: 0.9rem; line-height: 1.8; color: #666; margin-bottom: 30px; }
-.btn-noir-minimal { padding: 15px 30px; border: 1px solid #000; color: #000; text-decoration: none; font-size: 0.7rem; letter-spacing: 3px; font-weight: 600; width: fit-content; }
-.album-visual { background: #000; padding: 60px; display: flex; justify-content: center; align-items: center; }
-.qr-placeholder { border: 1px solid rgba(255,255,255,0.2); padding: 20px; text-align: center; color: #fff; }
-.qr-img { width: 150px; height: 150px; filter: invert(1); margin-bottom: 15px; }
-.qr-placeholder span { font-size: 0.6rem; letter-spacing: 2px; opacity: 0.7; display: block; }
+/* ÁLBUM */
+.album-section { padding: 80px 20px; }
+.album-card { display: grid; grid-template-columns: 1.2fr 0.8fr; border: 1px solid #eee; max-width: 1000px; margin: 0 auto; }
+.album-info { padding: 60px; }
+.album-info h2 { font-family: 'Bodoni Moda', serif; font-size: 2.5rem; margin-bottom: 20px; }
+.btn-noir { display: inline-block; padding: 15px 30px; border: 1px solid #000; text-decoration: none; color: #000; font-weight: 600; font-size: 0.7rem; letter-spacing: 2px; }
+.album-qr-side { background: #000; padding: 60px; display: flex; justify-content: center; }
+.qr-container { border: 1px solid rgba(255,255,255,0.2); padding: 20px; text-align: center; color: #fff; }
+.qr-container img { width: 140px; height: 140px; filter: invert(1); margin-bottom: 15px; }
+.qr-container span { font-size: 0.6rem; letter-spacing: 2px; opacity: 0.6; }
 
-/* RSVP NOIR */
+/* RSVP */
 .rsvp-noir { background: #000; color: #fff; padding: 100px 20px; text-align: center; }
-.rsvp-title { font-family: 'Bodoni Moda', serif; font-size: 4rem; letter-spacing: 15px; }
-.rsvp-subtitle { font-size: 0.7rem; letter-spacing: 4px; margin-top: 10px; opacity: 0.6; }
-.noir-form { display: flex; flex-direction: column; gap: 40px; max-width: 400px; margin: 60px auto; }
-.noir-form input, .noir-form select { background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; padding: 15px; font-size: 1rem; text-align: center; outline: none; border-radius: 0; }
-.btn-gold { background: #fff; color: #000; border: none; padding: 20px; font-weight: 600; letter-spacing: 4px; cursor: pointer; }
-.adults-only { font-size: 0.6rem; letter-spacing: 2px; opacity: 0.4; margin-top: 40px; }
+.bg-logo { font-family: 'Bodoni Moda', serif; font-size: 4rem; letter-spacing: 15px; margin-bottom: 10px; }
+.rsvp-limit { font-size: 0.7rem; letter-spacing: 4px; color: #444; margin-bottom: 60px; }
+.rsvp-form { display: flex; flex-direction: column; gap: 40px; max-width: 400px; margin: 0 auto; }
+.rsvp-form input, .rsvp-form select { background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; padding: 10px; font-size: 1rem; text-align: center; outline: none; border-radius: 0; }
+.rsvp-form button { background: #fff; color: #000; border: none; padding: 20px; font-weight: 600; letter-spacing: 3px; cursor: pointer; }
+.adults-note { font-size: 0.6rem; letter-spacing: 2px; opacity: 0.4; margin-top: 40px; }
 
-/* --- OPTIMIZACIÓN CELULAR --- */
+/* RESPONSIVO CELULAR PROFESIONAL */
 @media (max-width: 768px) {
-    /* Portada: El texto pisa la foto sin romperse */
-    .hero-split { grid-template-columns: 1fr; position: relative; }
-    .hero-image-side { height: 75vh; }
-    .hero-text-side { 
-        height: 45vh; width: 60%; position: absolute; bottom: 5%; right: 0; 
-        box-shadow: -10px 10px 30px rgba(0,0,0,0.05); 
-    }
-    .vertical-title h1 { font-size: 2rem; letter-spacing: 8px; }
+    .hero-img { width: 85%; height: 75%; }
+    .hero-white-card { width: 65%; bottom: 10%; padding: 30px 15px; }
+    .hero-text-content h1 { font-size: 2rem; }
 
-    /* Padres */
-    .parents-editorial-grid { flex-direction: column; gap: 30px; }
-    .vertical-divider { width: 40px; height: 1px; }
+    /* Forzado de intercalado en móvil */
+    .mural-row { display: flex; flex-direction: column; }
+    .mural-row.reverse { flex-direction: column-reverse; } /* Imagen arriba, texto abajo */
+    .mural-photo { height: 350px; }
+    .mural-text { text-align: center; align-items: center; padding: 50px 20px; }
 
-    /* Mural intercalado */
-    .mural-row, .mural-row.reverse { display: flex; flex-direction: column; }
-    .mural-row.reverse { flex-direction: column-reverse; }
-    .mural-img-box { height: 400px; width: 100%; }
-    .mural-text-box { padding: 60px 20px; text-align: center; width: 100%; }
-    .event-num { left: 50%; transform: translateX(-50%); font-size: 4rem; }
-
-    /* Álbum */
-    .album-layout { grid-template-columns: 1fr; }
-    .album-text { padding: 40px 20px; text-align: center; align-items: center; }
-    .album-visual { padding: 40px 20px; }
-    
-    /* RSVP */
-    .rsvp-title { font-size: 3rem; letter-spacing: 10px; }
+    .parents-grid { flex-direction: column; gap: 20px; }
+    .editorial-v-line { width: 40px; height: 1px; }
+    .album-card { grid-template-columns: 1fr; }
 }
-
-.footer-signature { padding: 40px; text-align: center; opacity: 0.4; font-size: 0.6rem; letter-spacing: 2px; }
+.footer-sig { padding: 40px; text-align: center; opacity: 0.3; font-size: 0.6rem; letter-spacing: 2px; }
