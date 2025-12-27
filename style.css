@@ -1,80 +1,90 @@
-:root { --black: #000; --white: #fff; --grey: #f4f4f4; }
+:root { --black: #0a0a0a; --white: #ffffff; --gray: #f4f4f4; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Montserrat', sans-serif; background: var(--white); overflow-x: hidden; }
-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); }
+body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) contrast(1.1); }
 
-/* PORTADA VOGUE CELULAR */
-.vogue-hero { height: 100vh; padding: 15px; background: #fff; }
-.hero-wrapper { position: relative; height: 100%; width: 100%; }
-.hero-img-container { width: 80%; height: 80%; }
-.hero-card-white { 
-    position: absolute; right: 0; bottom: 5%; width: 60%; 
-    background: #fff; padding: 40px 10px; z-index: 10;
-    box-shadow: -15px 15px 40px rgba(0,0,0,0.05);
+/* --- HERO SPLIT --- */
+.hero-split { display: grid; grid-template-columns: 1.2fr 0.8fr; height: 100vh; background: var(--gray); }
+.hero-text-side { background: #fff; display: flex; justify-content: center; align-items: center; }
+.vertical-title h1 { 
+    font-family: 'Bodoni Moda', serif; font-size: clamp(2rem, 8vw, 4rem); 
+    writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: 15px; margin: 0;
 }
-.hero-content h1 { 
-    font-family: 'Bodoni Moda', serif; font-size: 2.2rem; writing-mode: vertical-rl; 
-    transform: rotate(180deg); letter-spacing: 10px; line-height: 1;
+.hero-date { margin-top: 20px; letter-spacing: 5px; font-size: 0.8rem; display: block; text-align: center; }
+
+/* --- MENSAJE Y PADRES --- */
+.wedding-message-vogue { padding: 100px 20px; text-align: center; position: relative; }
+.message-wrapper { max-width: 550px; margin: 0 auto 60px; position: relative; }
+.ampersand-bg { 
+    font-family: 'Bodoni Moda', serif; font-size: 8rem; color: #f9f9f9; 
+    position: absolute; left: 50%; top: -40px; transform: translateX(-50%); z-index: -1; 
 }
-.vogue-date { display: block; margin-top: 30px; font-size: 0.7rem; letter-spacing: 4px; text-align: center; }
+.main-wedding-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; line-height: 1.8; }
+.parents-editorial-grid { display: flex; justify-content: center; align-items: center; gap: 40px; }
+.vertical-divider { width: 1px; height: 80px; background: #eee; }
+.family-label { font-size: 0.6rem; letter-spacing: 4px; color: #aaa; margin-bottom: 10px; display: block; }
+.parent-name { font-weight: 300; font-size: 1.1rem; margin: 5px 0; }
 
-/* PADRES */
-.editorial-parents { padding: 80px 20px; text-align: center; }
-.bg-ampersand { font-family: 'Bodoni Moda', serif; font-size: 8rem; color: #f9f9f9; position: absolute; left: 50%; transform: translateX(-50%); top: -50px; z-index: -1; }
-.quote-editorial { position: relative; margin-bottom: 60px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.2rem; line-height: 1.8; }
-.parents-vogue-grid { display: flex; justify-content: center; align-items: center; gap: 30px; }
-.divider-line { width: 1px; height: 50px; background: #eee; }
-.parent-box small { font-size: 0.6rem; letter-spacing: 3px; color: #aaa; margin-bottom: 8px; display: block; }
-.parent-box h3 { font-weight: 300; font-size: 1rem; }
+/* --- ITINERARIO --- */
+.itinerary-vogue { padding: 80px 20px; text-align: center; }
+.script-title { font-family: 'Playfair Display', serif; font-style: italic; font-size: 3rem; margin-bottom: 10px; }
+.vertical-line-short { width: 1px; height: 40px; background: #000; margin: 0 auto 40px; opacity: 0.2; }
+.timeline-container { display: flex; flex-direction: column; gap: 30px; position: relative; max-width: 300px; margin: 0 auto; }
+.timeline-container::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: #eee; }
+.timeline-item { position: relative; background: #fff; padding: 10px 0; z-index: 1; }
+.time { display: block; font-size: 0.8rem; letter-spacing: 3px; color: #888; }
+.event-name { font-size: 0.75rem; letter-spacing: 5px; font-weight: 600; margin-top: 5px; }
 
-/* ITINERARIO */
-.itinerary-vogue { padding: 60px 20px; text-align: center; background: #fafafa; }
-.script-font { font-family: 'Playfair Display', serif; font-style: italic; font-size: 2.5rem; margin-bottom: 40px; }
-.iti-row { margin-bottom: 25px; }
-.iti-row span { font-size: 0.7rem; color: #888; letter-spacing: 2px; display: block; }
-.iti-row strong { font-size: 0.85rem; letter-spacing: 3px; display: block; margin-top: 5px; }
+/* --- MURAL INTERCALADO --- */
+.event-mural { padding: 50px 0; }
+.mural-row { display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+.mural-row.reverse { direction: rtl; }
+.mural-row.reverse .mural-text-box { direction: ltr; }
+.mural-img-box { height: 500px; }
+.mural-text-box { padding: 60px; position: relative; }
+.event-num { font-family: 'Bodoni Moda', serif; font-size: 5rem; opacity: 0.1; position: absolute; top: 20px; }
+.mural-text-box h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+.btn-underline { text-decoration: none; color: #000; border-bottom: 2px solid #000; font-weight: 600; font-size: 0.7rem; letter-spacing: 2px; }
 
-/* MURAL INTERCALADO REAL */
-.mural-item { display: flex; flex-direction: column; border-top: 1px solid #eee; }
-.mural-text { padding: 60px 20px; text-align: center; position: relative; }
-.mural-n { font-family: 'Bodoni Moda', serif; font-size: 4rem; opacity: 0.05; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); }
-.mural-text h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 10px; }
-.vogue-link { display: inline-block; margin-top: 15px; border-bottom: 1px solid #000; text-decoration: none; color: #000; font-size: 0.7rem; letter-spacing: 2px; font-weight: 600; }
-.mural-img { height: 400px; width: 100%; }
+/* --- ÁLBUM --- */
+.album-editorial-section { padding: 80px 20px; background: #f9f9f9; }
+.album-layout { display: grid; grid-template-columns: 1fr 1fr; max-width: 1000px; margin: 0 auto; background: #fff; border: 1px solid #eee; }
+.album-text { padding: 60px; }
+.album-title { font-family: 'Bodoni Moda', serif; font-size: 2.5rem; }
+.btn-noir-minimal { padding: 15px 30px; border: 1px solid #000; text-decoration: none; color: #000; font-size: 0.7rem; letter-spacing: 2px; font-weight: 600; }
+.album-visual { background: #000; padding: 60px; display: flex; justify-content: center; }
+.qr-placeholder { border: 1px solid rgba(255,255,255,0.2); padding: 20px; text-align: center; color: #fff; }
+.qr-img { width: 130px; height: 130px; filter: invert(1); margin-bottom: 10px; }
 
-/* ESTO HACE EL INTERCALADO EN CELULAR */
-.reverse-logic { flex-direction: column-reverse; }
+/* --- RSVP --- */
+.rsvp-noir { background: #000; color: #fff; padding: 100px 20px; text-align: center; }
+.rsvp-title { font-family: 'Bodoni Moda', serif; font-size: 3.5rem; letter-spacing: 12px; }
+.noir-form { display: flex; flex-direction: column; gap: 30px; max-width: 400px; margin: 50px auto; }
+.noir-form input, .noir-form select { background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; padding: 15px; text-align: center; outline: none; }
+.btn-gold { background: #fff; color: #000; border: none; padding: 18px; font-weight: 600; letter-spacing: 3px; cursor: pointer; }
 
-/* ÁLBUM */
-.album-vogue { padding: 60px 20px; }
-.album-wrap { border: 1px solid #eee; display: flex; flex-direction: column; }
-.album-desc-side { padding: 50px 20px; text-align: center; }
-.album-desc-side h2 { font-family: 'Bodoni Moda', serif; font-size: 2rem; margin-bottom: 15px; }
-.btn-vogue-black { display: inline-block; padding: 15px 30px; border: 1px solid #000; color: #000; text-decoration: none; font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; }
-.album-qr-side { background: #000; padding: 60px; display: flex; justify-content: center; }
-.qr-editorial-box { border: 1px solid rgba(255,255,255,0.1); padding: 20px; text-align: center; color: #fff; }
-.qr-editorial-box img { width: 130px; height: 130px; filter: invert(1); margin-bottom: 10px; }
-.qr-editorial-box span { font-size: 0.5rem; letter-spacing: 2px; opacity: 0.5; }
+/* --- OPTIMIZACIÓN CELULAR --- */
+@media (max-width: 768px) {
+    .hero-split { grid-template-columns: 1fr; position: relative; height: 90vh; }
+    .hero-image-side { height: 70vh; }
+    .hero-text-side { 
+        height: 40vh; width: 65%; position: absolute; bottom: 5%; right: 0; 
+        box-shadow: -15px 15px 40px rgba(0,0,0,0.05); 
+    }
+    .vertical-title h1 { font-size: 1.8rem; letter-spacing: 10px; }
 
-/* RSVP */
-.rsvp-vogue { background: #000; color: #fff; padding: 80px 20px; text-align: center; }
-.vogue-logo { font-family: 'Bodoni Moda', serif; font-size: 3.5rem; letter-spacing: 12px; margin-bottom: 5px; }
-.rsvp-deadline { font-size: 0.6rem; letter-spacing: 3px; color: #444; margin-bottom: 50px; }
-.vogue-form { display: flex; flex-direction: column; gap: 35px; max-width: 320px; margin: 0 auto; }
-.vogue-form input, .vogue-form select { background: transparent; border: none; border-bottom: 1px solid #333; color: #fff; padding: 10px; text-align: center; font-size: 0.9rem; outline: none; border-radius: 0; }
-.vogue-form button { background: #fff; color: #000; padding: 18px; border: none; font-weight: 600; letter-spacing: 3px; cursor: pointer; }
+    .parents-editorial-grid { flex-direction: column; gap: 30px; }
+    .vertical-divider { width: 40px; height: 1px; }
 
-/* ESCRITORIO (PARA QUE NO SE ROMPA EN PC) */
-@media (min-width: 769px) {
-    .vogue-hero { padding: 40px; }
-    .hero-img-container { width: 70%; height: 90%; }
-    .hero-card-white { width: 45%; bottom: 10%; }
-    .hero-content h1 { font-size: 3.5rem; }
-    .mural-item { flex-direction: row; }
-    .reverse-logic { flex-direction: row-reverse; }
-    .mural-text, .mural-img { width: 50%; height: 600px; }
-    .album-wrap { flex-direction: row; }
-    .album-desc-side, .album-qr-side { width: 50%; }
+    /* MURAL INTERCALADO EN CELULAR */
+    .mural-row { display: flex; flex-direction: column; }
+    .mural-row.reverse { flex-direction: column-reverse; }
+    .mural-img-box { height: 350px; width: 100%; }
+    .mural-text-box { padding: 50px 20px; text-align: center; }
+    .event-num { left: 50%; transform: translateX(-50%); top: 10px; }
+
+    .album-layout { grid-template-columns: 1fr; }
+    .album-text { padding: 40px 20px; text-align: center; }
 }
 
-.guru-footer { padding: 30px; text-align: center; font-size: 0.6rem; letter-spacing: 2px; opacity: 0.3; }
+.footer-signature { padding: 40px; text-align: center; opacity: 0.4; font-size: 0.6rem; letter-spacing: 2px; }
