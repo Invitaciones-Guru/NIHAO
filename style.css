@@ -357,7 +357,7 @@ img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) cont
 .countdown-grid {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     width: 100%;
 }
 
@@ -385,8 +385,8 @@ img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) cont
 
 /* 🔥 PARA CELULAR */
 @media (max-width: 768px) {
-
     .countdown-grid {
+        flex-wrap: nowrap;
         overflow-x: auto;
         padding-bottom: 10px;
     }
@@ -395,28 +395,11 @@ img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%) cont
         flex: 0 0 auto;
         min-width: 80px;
     }
-}  /* ✔ CIERRE CORRECTO */
-
-/* Ajusta el espacio arriba/abajo de la sección completa */
-#countdown-section {
-    margin-top: 40px;
-    margin-bottom: 40px;
 }
 
-/* En celular */
-@media (max-width: 768px) {
-    #countdown-section {
-        margin-top: 30px;
-        margin-bottom: 50px;
-    }
-}
-
-
-
-
-.mural-row:last-child {
-    margin-bottom: 10px !important;
-}
+/* 💎 SEPARACIÓN REAL ARRIBA/ABAJO */
 .countdown-full {
-    margin-top: 20px !important;
+    margin-top: -10px;      
+    padding-top: 0; /* lo pega a la foto */
+    margin-bottom: 60px;   /* lo separa del álbum */
 }
