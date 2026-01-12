@@ -10,6 +10,7 @@ document.getElementById('rsvpForm').onsubmit = (e) => {
     window.open(`https://wa.me/528186694938?text=${text}`, '_blank');
 };
 
+// TIMER 
 function startTimer() {
     const target = new Date("January 18, 2026 18:00:00").getTime();
     
